@@ -1,8 +1,8 @@
 /*
 Jesse Read
 1309 - VFW
-VFW Project 3
-2013-09-19
+VFW Project 4
+2013-09-26
 */
 
 /* This is meant to be view *ONLY* on a mobile device. */
@@ -27,17 +27,17 @@ header {
 	letter-spacing:-0.5px;
 	font-size:22px;
     text-shadow: 0 -1px #202020;
-	height:42px; 
-	border-bottom:1px solid #575757; 
+	height:42px;
+	border-bottom:1px solid #575757;
 	border-top:1px solid #797979;
-	
+
 	/* Webkit gradient. Generated using http://gradients.glrzad.com/ */
 	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
 	/* Fallback for non-iOS browsers */
-	background-color:#5f5f5f; 
-	color:white; 
-	text-align:center; 
-	line-height:42px; 
+	background-color:#5f5f5f;
+	color:white;
+	text-align:center;
+	line-height:42px;
 	margin-bottom: 10px;
 }
 

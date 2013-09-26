@@ -1,8 +1,8 @@
 /*
 Jesse Read
 1309 - VFW
-VFW Project 3
-2013-09-19
+VFW Project 4
+2013-09-26
 */
 
 /* Wait until the DOM is ready */
@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var element = document.getElementById(x);
 		return element;
 	}
-	
+
 	function createReleaseSelector() {
 		var label = document.createElement('label');
 		label.setAttribute("for", "releaseType");
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		el('releaseArtistLi').appendChild(select);
 	}
-	
+
 	function changeFormat() {
 		if (el('addEntry').style.display === "none") {
 			el('addEntry').style.display = "inline";
@@ -38,13 +38,13 @@ window.addEventListener("DOMContentLoaded", function(){
 			document.forms[0].style.display = "none";
 		} else {
 			el('addEntry').style.display = "none";
-			el('displayLink').style.display = "inline";			
+			el('displayLink').style.display = "inline";
 			el('frame').removeChild(el('entities'));
 			document.forms[0].style.display = "block";
 		}
 		resetForm();
 	}
-	
+
 	function removeAllEntities() {
 		if (localStorage.length > 0) {
 			if (confirm("Remove all entries?")) {
@@ -55,10 +55,10 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert('There are no entries to be removed.');
 		}
 		if (document.forms[0].style.display === "none") {
-			changeFormat();	
+			changeFormat();
 		}
 	}
-	
+
 	function getReleaseArtistValue() {
 		var options = document.forms[0].releaseArtists;
 		for (var i = 0; i < options.length; i++) {
@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 		}
 	}
-	
+
 	function isFavorite() {
 		if (el('favorite').checked) {
 			return "Yes";
@@ -75,7 +75,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			return "No";
 		}
 	}
-	
+
 	function addEntity(key){
 		if (validateInput()) {
 			if (this.key == null) {
@@ -95,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			localStorage.setItem(key, JSON.stringify(entity))
 			alert("Release saved.")
 			resetForm();
-			
+
 		}
 	}
 
@@ -140,12 +140,12 @@ window.addEventListener("DOMContentLoaded", function(){
 			entityDetails.appendChild(deleteLi);
 		}
 	}
-	
+
 	function editRelease() {
 		changeFormat();
-	
+
 		var item = JSON.parse(localStorage.getItem(this.key));
-		
+
 		el('artistName').value = item.artistName[1];
 		el('albumName').value = item.albumName[1];
 		el('releaseDate').value = item.releaseDate[1];
@@ -156,17 +156,17 @@ window.addEventListener("DOMContentLoaded", function(){
 			if(artistReleaseOptions[i].value == "Single Artist" && item.releaseArtist[1] == "Single Artist") {
 				artistReleaseOptions[i].setAttribute("checked", "checked");
 			} else if(artistReleaseOptions[i].value == "Various Artists" && item.releaseArtist[1] == "Various Artists") {
-				artistReleaseOptions[i].setAttribute("checked", "checked");				
+				artistReleaseOptions[i].setAttribute("checked", "checked");
 			}
 		}
 		el('songCount').value = item.songCount[1];
 		el('opinion').value = item.opinion[1];
 		if(item.favorite[1] == "Yes") el('favorite').setAttribute("checked", "checked");
-		
+
 		el('submit').value = "Update Release";
 		el('submit').key = this.key;
 	}
-	
+
 	function deleteRelease() {
 		if (confirm("Remove release from collection?")) {
 			localStorage.removeItem(this.key);
@@ -174,7 +174,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			window.location.reload();
 		}
 	}
-	
+
 	function resetForm () {
 		el('submit').key = null;
 		el('submit').value = "Add Release to Collection";
@@ -193,14 +193,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		el('opinion').value = "";
 		el('favorite').removeAttribute("checked");
 	}
-	
+
 	function validateInput() {
 		el ('errors').innerHTML = "";
 		el('artistName').style.border = "1px solid black";
 		el('albumName').style.border = "1px solid black";
 		el('releaseDate').style.border = "1px solid black";
 		el('releaseType').style.border = "1px solid black";
-		
+
 		var errorMsg = [];
 		if (el('artistName').value === "") {
 			errorMsg.push("Album artist required.")
@@ -229,14 +229,14 @@ window.addEventListener("DOMContentLoaded", function(){
 			return true;
 		}
 	}
-	
+
 	// Add dropdown menu
 	createReleaseSelector();
-	
+
 	// Click events
 	el('displayLink').addEventListener("click", retrieveEntities);
 	el('clearData').addEventListener("click", removeAllEntities);
 	el('submit').addEventListener("click", addEntity);
 	el('addEntry').addEventListener("click", changeFormat);
-	
+
 });
