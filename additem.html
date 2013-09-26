@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Jesse Read
+1309 - VFW
+VFW Project 3
+2013-09-19
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Add an item to your collection." />
+		<meta name="keywords" content="music, list, html5, Full Sail University" />
+		<meta name="robots" content="index, follow" />
+		<!-- Only concerned about iOS for now. -->
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="script" href="js/main.js" />
+		<title>Add a Release</title>
+	</head>
+	<body>
+		<header>
+			Audiophone
+		</header>
+		<section id="frame">
+		<form action="" method="post">
+			<fieldset>
+				<legend>Add a Release</legend>
+				<span id="required">Fields marked with * are required.</span>
+				<ul id="errors"></ul>
+				<ul class="sectionList">
+					<li class="sectionList"><label for="artistName">Album Artist:</label><input type="text" id="artistName" /></li>
+					<li class="sectionList"><label for="albumName">Album Name:</label><input type="text" id="albumName" /></li>
+					<li class="sectionList"><label for="releaseDate">Release Date:</label><input type="date" id="releaseDate" /></li>
+					<li class="sectionList" id="releaseArtistLi">
+					</li>
+					<li class="sectionList">Release Artists:
+						<ul>
+							<li  class="sectionList" id="releaseArtist"><input type="radio" checked value="Single Artist" id="singleArtist" name="releaseArtists" /><label for="singleArtist">Single Artist</label></li>
+							<li  class="sectionList" id="releaseArtist"><input type="radio" value="Various Artists" id="variousArtists" name="releaseArtists" /><label for="variousArtists">Various Artists</label></li>
+						</ul>
+					</li>
+					<li class="sectionList"><label for="songCount">Number of songs:</label><input type="range" id="songCount" /></li>
+					<li class="sectionList"><label for="opinion">Opinion:</label><textarea id="opinion"></textarea></li>
+					<li class="sectionList"><label for="favorite">Is this release a favorite?</label><input type="checkbox" id="favorite" /></li>
+				</ul>
+				<input type="hidden" value="true" />
+			</fieldset>
+			<input type="button" value="Add Release to Collection" id="submit" />
+		</form>
+		<nav>
+			<a href="#" id="clearData">Clear stored data</a>
+			<a href="#" id="displayLink">Display data</a>
+			<a href="#" id="addEntry" style="display: none;">Add Release</a>
+		</nav>
+		</section>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

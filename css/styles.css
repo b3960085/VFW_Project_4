@@ -1,0 +1,111 @@
+/*
+Jesse Read
+1309 - VFW
+VFW Project 3
+2013-09-19
+*/
+
+/* This is meant to be view *ONLY* on a mobile device. */
+html {
+    background-color: #DEDEDE;
+}
+
+/* Modified styling from my custom SDI CSS. */
+body {
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: white;
+    color: #202020;
+    width: 90%;
+    border: 0.5em solid #A6A59C;
+    line-height: 1.5em;
+}
+
+/* The header style is based on Apple's website. */
+header {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	letter-spacing:-0.5px;
+	font-size:22px;
+    text-shadow: 0 -1px #202020;
+	height:42px; 
+	border-bottom:1px solid #575757; 
+	border-top:1px solid #797979;
+	
+	/* Webkit gradient. Generated using http://gradients.glrzad.com/ */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
+	/* Fallback for non-iOS browsers */
+	background-color:#5f5f5f; 
+	color:white; 
+	text-align:center; 
+	line-height:42px; 
+	margin-bottom: 10px;
+}
+
+section {
+	padding: 0 .5em .5em .5em;
+}
+
+/* Modified link styling based on my personal blog. */
+#indexLink {
+	display:block;
+	margin-top: 10px;
+}
+
+a {
+	color: #666;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #DD0000;
+}
+
+/* Add Item formatting */
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+legend {
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+.sectionList {
+	padding: 0 0 0 10px;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+.entityList {
+	padding: 0;
+}
+
+#listEntry {
+	margin-bottom: 10px;
+}
+
+#releaseArtist {
+	padding: 0 0 0 20px;
+}
+
+#songCount {
+	display: block;
+	width: 80%;
+	margin: 5px auto;
+}
+
+#opinion {
+	margin-left: 5px;
+/* 	height: 50px; */
+	width: 70%;
+	vertical-align: middle;
+}
+
+#required {
+	font-size: smaller;
+	margin: 0 0 0 15px;
+}
