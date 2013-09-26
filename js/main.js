@@ -127,6 +127,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var entityDetails = document.createElement('ul');
 			entityDetails.setAttribute("class", "entityList");
 			entityLi.appendChild(entityDetails);
+			loadImage(entity.releaseArtist[1], entityDetails);
 			for (var property in entity) {
 				var detailLi = document.createElement('li');
 				detailLi.setAttribute("class", "entityList");
@@ -150,6 +151,23 @@ window.addEventListener("DOMContentLoaded", function(){
 			deleteLi.appendChild(deleteLink);
 			entityDetails.appendChild(deleteLi);
 		}
+	}
+	
+	/* 	Load image based on whether this is a "single" or "contribution" album.
+		The solo image is available for commerical use via the iPhone SDK.
+		The group image is available for royalty-free commercial use courtesy of http://glyphicons.com/ */
+	function loadImage(releaseArtist, parent) {
+		var imageNode = document.createElement('li');
+		parent.appendChild(imageNode);
+		var imageTag = document.createElement('img');
+		if (releaseArtist == "Single Artist") {
+			var name = "glyph_solo";
+		} else {
+			var name = "glyph_albums";
+		}
+		imageTag.setAttribute('src', 'images/' + name + ".png");
+		imageNode.appendChild(imageTag);
+		
 	}
 	
 	function editRelease() {
