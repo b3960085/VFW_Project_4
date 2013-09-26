@@ -80,7 +80,7 @@ ul, li {
 	list-style-type: none;
 }
 
-li {
+.sectionList li {
 	margin-left: -10px;
 }
 
