@@ -16,7 +16,7 @@ var sampleData = {
 		"releaseType" : ["Release Type: ", "Album"],
 		"releaseArtist" : ["Release Artists: ", "Single Artist"],
 		"songCount" : ["Number of songs: ", "10"],
-		"opinion" : ["Opinion: ", "Classic."],
+		"opinion" : ["Opinion: ", "Classic"],
 		"favorite" : ["Favorite: ", "Yes"],		
 	}, 
 	"ob" : {
